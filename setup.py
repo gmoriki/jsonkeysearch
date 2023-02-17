@@ -11,7 +11,7 @@ AUTHOR_EMAIL = "gingiragin@outlook.jp"
 URL = "https://github.com/gmoriki/jsonkeysearch"
 LICENSE = "MIT"
 DOWNLOAD_URL = URL
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 PYTHON_REQUIRES = ">=3.6"
 INSTALL_REQUIRES = [""]
 PACKAGES = ["jsonkeysearch"]
