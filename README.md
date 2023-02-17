@@ -30,7 +30,8 @@ json_example = {
 target = JSONKeySearch(json_example)
 
 # [1] onclickをキーに持つ全ての辞書データをリストに格納
-key_, value_ = "onclick", ""
+key_ = "onclick"
+value_ = ""
 target.search(key=key_, value=value_)
 
 # 結果の出力
@@ -42,7 +43,8 @@ print(target.jsonObject)
 # ]
 
 # [2] onclickをキーに持ち、値に'Open'を含む辞書データをリストに格納
-key_, value_ = "onclick", "Open"
+key_="onclick"
+value_ = "Open"
 target.search(key = key_, value = value_)
 
 # 結果の出力
