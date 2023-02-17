@@ -6,14 +6,14 @@ from setuptools import setup
 
 DESCRIPTION = "jsonkeysearch: Searches for keys in JSON format files."
 NAME = "jsonkeysearch"
-AUTHOR = "TAKAHASHI Taro"
+AUTHOR = "MORIKI Ginga"
 AUTHOR_EMAIL = "gingiragin@outlook.jp"
 URL = "https://github.com/gmoriki/jsonkeysearch"
 LICENSE = "MIT"
 DOWNLOAD_URL = URL
 VERSION = "0.1.0"
 PYTHON_REQUIRES = ">=3.6"
-INSTALL_REQUIRES = ["pytz>=2020.1"]
+INSTALL_REQUIRES = [""]
 PACKAGES = ["jsonkeysearch"]
 KEYWORDS = "json search"
 CLASSIFIERS = ["License :: OSI Approved :: MIT License", "Programming Language :: Python :: 3.10"]
