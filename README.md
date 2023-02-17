@@ -1,6 +1,6 @@
 # jsonkeysearch
 ## Description
-`jsonkeysearch`はJSON形式のファイルからキーを再帰的に探索するPythonライブラリです。
+`jsonkeysearch` is a Python library that recursively searches for keys in JSON format files.
 
 ## Installaction
 
@@ -29,12 +29,11 @@ json_example = {
 
 target = JSONKeySearch(json_example)
 
-# [1] onclickをキーに持つ全ての辞書データをリストに格納
+# [1] Append all dictionary with onclick as key in a list
 key_ = "onclick"
-value_ = ""
+value_ = "" # All value in key
 target.search(key=key_, value=value_)
 
-# 結果の出力
 print(target.jsonObject)
 # [
 #     {"value": "New", "onclick": "CreateNewDoc()"},
@@ -42,18 +41,15 @@ print(target.jsonObject)
 #     {"value": "Close", "onclick": "CloseDoc()"},
 # ]
 
-# [2] onclickをキーに持ち、値に'Open'を含む辞書データをリストに格納
+# [2] Append dictionary in a list with onclick as key and 'Open' as value
 key_="onclick"
 value_ = "Open"
 target.search(key = key_, value = value_)
 
-# 結果の出力
 print(target.jsonObject)
 # [{"value": "Open", "onclick": "OpenDoc()"}]
 
-# 値の取得
 for dict_ in target.jsonObject:
     print(dict_[key_])
 # 'OpenDoc()'
-
 ```

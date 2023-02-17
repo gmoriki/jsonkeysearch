@@ -3,11 +3,37 @@ from dataclasses import dataclass, field
 
 @dataclass
 class JSONKeySearch:
+    """
+    JSONを明示的に探索するクラス
+
+    Parameters
+    -------
+    jsonObject
+        処理対象のJSONファイル -> searchを経てダウンサイズされる
+    _json_element
+        jsonObjectを処理する要素単位
+
+    """
 
     jsonObject: dict = field(default_factory=dict)
     _json_element: object = ""
 
     def search(self, key="", value=""):
+        """
+        再帰関数:指定したkeyとvalueをもとにJSONファイルを探索する
+
+        Parameters
+        ----------
+        key : str, optional
+            探索対象の辞書キー, by default ""
+        value : str, optional
+            探索対象の辞書値, by default ""
+
+        Returns
+        -------
+        res
+            リストに格納された辞書形式
+        """
         res = []
         if self.find_key(self.jsonObject, key, value):
             res.append(self.jsonObject)
@@ -25,6 +51,24 @@ class JSONKeySearch:
         return res
 
     def find_key(self, arg, key, value):
+        """
+        JSONファイルを絞り込む条件を指定する
+        条件を変更する場合はfind_keyをオーバーライドすること
+
+        Parameters
+        ----------
+        arg : dict
+            searchから渡されたself.jsonObject
+        key : str
+            探索対象の辞書キー
+        value : str
+            探索対象の辞書値
+
+        Returns
+        -------
+        bool
+            searchの返り値としてappendするか否かを決定する条件式
+        """
         if isinstance(arg, dict) and key in arg.keys():
 
             if not value:
@@ -33,6 +77,7 @@ class JSONKeySearch:
                 return str(value) in str(arg[key])
 
 
+# find_keyをオーバーライドする例
 # ASJC分野別論文指標を取得するための子クラス
 class JSONKeySearchWithASJCmetricsFilters(JSONKeySearch):
     def find_key(self, arg, key, value):
