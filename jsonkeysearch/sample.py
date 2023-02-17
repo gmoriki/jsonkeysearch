@@ -1,4 +1,3 @@
-#%%
 from jsonkeysearch import JSONKeySearch
 
 # jsonのサンプル https://json.org/example.html
