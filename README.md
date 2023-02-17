@@ -4,7 +4,7 @@
 
 ## Installaction
 
-<!-- ```pip install jsokeysearch``` -->
+```pip install jsokeysearch```
 
 ## Usage
 
