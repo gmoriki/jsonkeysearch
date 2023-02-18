@@ -5,7 +5,7 @@
 ## Installaction
 
 ```
-pip install jsokeysearch
+pip install jsonkeysearch
 ```
 
 ## Usage
